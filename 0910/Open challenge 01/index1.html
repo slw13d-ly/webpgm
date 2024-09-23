@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>나의 소개</title>
+    <style>
+        h3{color: blue; text-align: center;}
+        hr{height: 5px; border: solid gray; background-color: gray;}
+        body{background-color: plum;}
+        p{color: green;}
+    span{color: red; font-size: 1.3em;}
+
+</style>
+<script>
+    function show(){
+        document.getElementById ("fig").src="shrex.png";
+    }
+
+    function hind(){
+        document.getElementById ("fig").src="";
+    }
+</script>
+</head>
+<body>
+<h3 onmouseover="show()" onmouseout="hind()">슈렉</h3>
+<hr>
+<div><img id="fig" src=""></div>
+<p>저는 대학민국에서 태어나서 컴퓨터 공학을 전공하는 학생입니다. 제가 제일 좋아하는 
+과목은 <span>웹 프로그래밍</span>이고, 그 중에서도 <span>자바스크립트</span>를 제일 잘합니다.
+</р>
+</body>
+</html>
