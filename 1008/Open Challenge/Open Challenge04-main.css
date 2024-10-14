@@ -1,0 +1,22 @@
+h1{ text-align: center;
+	color: brown; }
+
+body{ background-color: aliceblue; }
+
+header{ border-bottom-width: 1px;
+		border-bottom-style:  solid;
+		border-left-color: black;}
+
+a{ text-decoration: none; }
+
+p{ font-family: 휴먼편지체, 바탕체, Selif;
+   font-size: 1em;
+   text-indent: 1em; }
+
+h2{ color: blue;
+	text-shadow: 3px 3px 5px skyblue; }
+
+footer{ text-align: 1em;
+		border-radius: 10px;
+		background: orange;
+		margin: 10px; }

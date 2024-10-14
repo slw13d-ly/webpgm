@@ -1,0 +1,21 @@
+h1{ text-align: center;
+	font-family: normal;
+	color: brown; }
+
+body{ background: aliceblue;
+	  font-family: 휴먼편지체, Arial, Selif; }
+
+body span{ font-family: normal;
+		   color: darkblue;
+		   font-weight: bold; }
+
+p{ font-family: 휴먼편지체, Arial, Selif; }
+
+footer{ text-indent: 1em;
+		border-radius: 10px;
+		background: orange;
+		margin: 10px; }
+
+form{ background-color: pink;
+	  margin: 20px;
+	  padding-left: 15px; }

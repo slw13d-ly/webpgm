@@ -1,0 +1,44 @@
+html, body{
+	width: 100%;
+	height: 95%;
+}
+
+h1{
+	text-align: center;
+}
+
+li{
+	text-indent: 1em;
+}
+
+header{
+	display: block;
+	width: 100%;
+	height: 20%;
+	background: yellow;
+	float: top;
+}
+
+section{
+	display: block;
+	width: 83%;
+	height: 93%;
+	background: lightblue;
+	float: right;
+}
+
+nav{
+	width: 17%;
+	height: 93%;
+	background: orange;
+	float: left;
+}
+
+footer{
+	display: block;
+	width: 100%;
+	height: 10%;
+	padding: 10px;
+	background-color: plum;
+	float: left;
+}
