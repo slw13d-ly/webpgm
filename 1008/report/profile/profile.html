@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+
+<style>
+
+@font-face {
+	font-family: LOGO_FONT;
+	src: url("font/양진체v0.9_otf.otf") format("truetype");
+}
+
+@font-face {
+	font-family: MENU_FONT;
+	src: url("font/전남교육유나체 TTF Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: HEAD_TITLE_FONT;
+	src: url("font/KCC-Murukmuruk.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: HEAD_SUB_FONT;
+	src: url("font/KCC-Sonkeechung.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: NORMAL_FONT;
+	src: url("font/Adultkid.ttf") format("truetype");
+}
+
+* {
+	font-family: NORMAL_FONT;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: #2e7f7f;
+}
+
+hgroup h1 {
+	font-family: HEAD_TITLE_FONT;
+	text-shadow: 1px 1px 1px #aaa;
+	font-size: 32px;
+	color: #4e8f8f;
+}
+
+hgroup h2 {
+	font-family: HEAD_SUB_FONT;
+	color: #5e7f7f;
+	text-shadow: 1px 1px 1px #eee;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+aside {
+	position: absolute;
+	width: 200px;
+	top: 0;
+	right: 0;
+}
+
+#wrapBox {
+	position: relative;
+	width: 800px;
+	margin: auto;
+	text-align: left;
+}
+
+#topMenus h1 {
+	font-family: LOGO_FONT;
+	font-size: 32px;
+	padding: 20px;
+	color: #2e4f4f;
+	text-shadow: 2px 2px 2px #ccc;
+}
+
+#topMenus ul {
+	position: absolute;
+	top: 8px;
+	right: 0;
+	text-align: right;
+	width: 500px;
+	height: 50px;
+	font-size: 16px;
+}
+
+#topMenus ul li {
+	display: inline;
+	padding-right: 15px;
+}
+
+#topMenus ul li a {
+	font-family: MENU_FONT;
+	font-size: 22px;
+	text-shadow: 2px 2px 1px #ddd;
+}
+
+#topMenus ul li a:hover {
+	border-bottom: #2eafaf 2px dotted;
+	padding-bottom: 3px;
+}
+
+#nowStep {
+	width: 100px;
+}
+
+#mainContent {
+	position: relative;
+}
+
+#myPhoto img {
+	box-shadow: rgba(0, 0, 100, 0.25) 2px 3px 3px;
+	-webkit-box-shadow: rgba(0, 0, 100, 0.25) 2px 3px 3px; /* 크롬/사파리 브라우저용 */
+	-moz-box-shadow: rgba(0, 0, 100, 0.25) 2px 3px 3px; /* 불여우 예전 버젼용 */
+}
+
+#copyleft {
+	background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#f2f2f2)); /* 크롬/사파리 브라우저용 */
+	padding: 10px;
+	text-align: center;
+	color: #999;
+}
+
+.shadowBox {
+	border: #ddd 1px solid;
+	border-radius: 10px;
+	-moz-border-radius: 10px; /* 불여우 예전 버젼용 */
+	box-shadow: rgba(0, 0, 128, 0.2) 0px 3px 3px;
+	-webkit-box-shadow: rgba(0, 0, 128, 0.2) 0px 3px 3px; /* 크롬/사파리 브라우저용 */
+	-moz-box-shadow: rgba(0, 0, 128, 0.2) 0px 3px 3px; /* 불여우 예전 버젼용 */
+}
+
+.fixWidth {
+	width: 560px;
+	padding: 0 10px 0 10px;
+	margin: 0 0 20px 0;
+}
+</style>
+
+<script>
+window.onload = function() {
+	var context = document.getElementById("canvas").getContext("2d");
+
+	// 얼굴 (큰 원) 그리기
+	context.beginPath();
+	context.arc(150, 100, 70, 0, Math.PI * 2);
+	context.lineWidth = 10;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(200, 125, 10, 0.3)';
+	context.stroke();
+
+	// 왼쪽 눈 그리기
+	context.beginPath();
+	context.arc(120, 90, 10, -(Math.PI), 0);
+	context.lineWidth = 5;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(230, 130, 20, 0.5)';
+	context.stroke();
+
+	// 오른쪽 눈 그리기
+	context.beginPath();
+	context.arc(180, 90, 10, -(Math.PI), 0);
+	context.lineWidth = 5;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(230, 130, 20, 0.5)';
+	context.stroke();
+
+	// 입술 윗 선 그리기
+	context.beginPath();
+	context.moveTo(130, 120);
+	context.lineTo(170, 120);
+	context.lineWidth = 3;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(250, 145, 30, 0.5)';
+	context.stroke();
+
+	// 입술 아래 곡선 그리기
+	context.beginPath();
+	context.arc(150, 120, 20, 0, -(Math.PI));
+	context.lineWidth = 3;
+	context.lineCap = 'round';
+	context.strokeStyle = 'rgba(250, 145, 30, 0.5)';
+	context.stroke();
+
+	// 글자 그리기
+	context.font = "bold 24px MENU_FONT";
+	context.fillText("Welcome~! Happy day~!", 280, 100);
+	context.stroke();
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="wrapBox">
+
+	<section id="topMenus">
+		<h1 class="shadowBox">SIRINI</h1>
+
+		<nav>
+			<ul>
+				<li><a href="./">첫화면</a></li>
+				<li><a href="http://sirini.net">웹사이트</a></li>
+				<li><a href="http://sirini.net/blog">블로그</a></li>
+				<li><a href="http://twitter.com/grboard">트위터</a></li>
+				<li><a href="http://facebook.com/Eugene.choi">페이스북</a></li>
+				<li><a href="jinye24@naver.com">이메일</a></li>
+			</ul>
+		</nav>
+	</section>
+	<header>
+		<hgroup>
+			<h1>최유진 소개 페이지</h1>
+			<h2>만나서 반갑습니다! 이 페이지는 저를 소개하는 페이지입니다! 
+			이 페이지는 HTML5 기반으로 제작되었으며, 예제용으로 작성되었습니다.
+			아직까지 계속 작업중입니다. 현재 진행상태는 <progress id="nowStep" value="35" max="100">35%</progress> 입니다. 감사합니다!</h2>
+		</hgroup>
+	</header>
+	
+	<div id="mainContent">
+		<div id="basicInfo" class="shadowBox fixWidth">
+			<section>
+				<hgroup>
+					<h1>기본정보</h1>
+				</hgroup>
+				
+				<ul>
+					<li>정관고등학교 졸업</li>
+					<li>경성대학교 국어국문학과 22학번</li>
+					<li>2023년 7월 소프트웨어학과 복수전공 중</li>
+					<li>개발에 올인하고 싶은 마음 2년 째</li>
+				</ul>
+			</section>
+		</div>
+		
+		<div id="techLog" class="shadowBox fixWidth">
+			<section>
+				<hgroup>
+					<h1>개발이력</h1>
+				</hgroup>
+				
+				<ul>
+					<li>2024년 9월 <명품 HTML5 + CSS3 + JavaScript 웹 프로그래밍>수업 시작</li>
+					<li>2024년 10월 <명품 HTML5 + CSS3 + JavaScript 웹 프로그래밍>공부 중</li>
+				</ul>
+			</section>
+		</div>
+		
+		<div id="say" class="fixWidth">
+			<section>
+				<canvas id="canvas" width="550" height="200"></canvas>
+			</section>
+		</div>
+		<aside>
+			<figure id="myPhoto">
+				<img src="21.jpg" alt="최유진 사진" />
+				<figcaption>최유진 사진</figcaption>
+			</figure>
+		</aside>
+	</div>
+	
+	<footer>
+		<div id="copyleft" class="shadowBox">
+			이 문서는 HTML5 예제용으로 작성한 문서이며, 크롬 브라우저에서 테스트 되었습니다. 수정 및 재배포 자유.
+		</div>
+	</footer>
+
+</div>
+
+</body>
+
+</html>
