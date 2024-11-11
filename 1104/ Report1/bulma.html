@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개 페이지</title>
+    <!-- Bulma CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 개인 폰트 추가 */
+        @font-face {
+            font-family: 'TitleFont';
+            src: url('fonts/BMDOHYEON_ttf.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'BodyFont';
+            src: url('fonts/Cafe24OhsquareAir-v2.0.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 기본 설정 */
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            font-family: 'BodyFont', 'Noto Sans KR', sans-serif;
+        }
+
+        /* 제목에 폰트 적용 */
+        h2, h4 {
+            font-family: 'TitleFont', sans-serif;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        /* 본문 텍스트에 폰트 적용 */
+        p, ul, li, a {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* 좌측 컬럼: 프로필 이미지 */
+        .profile-section img {
+            width: 60%;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-section img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container is-fluid">
+        <div class="columns is-vcentered">
+            <!-- 좌측: 프로필 이미지 -->
+            <div class="column is-4 has-text-centered">
+                <div class="profile-section">
+                    <img src="21.jpg" alt="프로필 이미지" class="image is-rounded">
+                </div>
+            </div>
+
+            <!-- 우측: 정보와 소개 -->
+            <div class="column is-8">
+                <h2 class="title is-3 has-text-primary">안녕하세요, 최유진입니다!</h2>
+                <p class="subtitle is-5">저는 대학생이며, 현재 소프트웨어 학과를 복수전공 중이며, 개발을 공부하고 있습니다. 이 페이지는 bulma로 만들어졌습니다. 챗 GPT의 도움을 받았습니다.</p>
+
+                <!-- 스킬 섹션 -->
+                <div class="skills">
+                    <h4 class="title is-4 has-text-primary"><i class="fas fa-laptop-code"></i> 스킬</h4>
+                    <ul>
+                        <li class="py-2"><i class="fas fa-code"></i> C언어</li>
+                        <li class="py-2"><i class="fab fa-java"></i> Java</li>
+                        <li class="py-2"><i class="fab fa-html5"></i> HTML, CSS</li>
+                        <li class="py-2"><i class="fas fa-box"></i> bulma</li>
+                    </ul>
+                </div>
+
+                <!-- 연락처 섹션 -->
+                <div class="contact mt-5">
+                    <h4 class="title is-4 has-text-primary"><i class="fas fa-envelope"></i> 연락처</h4>
+                    <p>Email: <a href="mailto:jinye24@naver.com" class="has-text-link">jinye24@naver.com</a></p>
+                    <p>Phone: 010-4660-2898</p>
+                    <a href="mailto:jinye24@naver.com" class="button is-link is-rounded">
+                        <i class="fas fa-paper-plane"></i> 이메일 보내기
+                    </a>
+                </div>
+
+                <!-- 소셜 링크 -->
+                <div class="social-links mt-5">
+                    <h4 class="title is-4 has-text-primary"><i class="fas fa-link"></i> 소셜 링크</h4>
+                    <a href="https://github.com/slw13d-ly/webpgm" target="_blank" class="button is-dark is-rounded">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

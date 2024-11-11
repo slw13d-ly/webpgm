@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개 페이지</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* 개인 폰트 추가 */
+        @font-face {
+            font-family: 'TitleFont';
+            src: url('fonts/BMDOHYEON_ttf.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'BodyFont';
+            src: url('fonts/Cafe24OhsquareAir-v2.0.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* 제목에 폰트 적용 */
+        h2, h4 {
+            font-family: 'TitleFont', sans-serif;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        /* 본문 텍스트에 폰트 적용 */
+        p, ul, li, a {
+            font-family: 'BodyFont', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* 메인 컨테이너 */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            overflow: hidden;
+        }
+
+        /* 좌측 컬럼: 프로필 이미지 */
+        .profile-section {
+            flex: 1;
+            background-color: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .profile-section img {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* 우측 컬럼: 정보와 소개 */
+        .info-section {
+            flex: 2;
+            padding: 40px;
+        }
+
+        .info-section h2 {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .info-section .skills,
+        .info-section .contact,
+        .info-section .social-links {
+            margin-top: 30px;
+        }
+
+        .skills h4,
+        .contact h4,
+        .social-links h4 {
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        ul.list-group {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.list-group li {
+            padding: 8px 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        ul.list-group li:last-child {
+            border-bottom: none;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            margin-top: 20px;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 좌측: 프로필 이미지 -->
+        <div class="profile-section">
+            <img src="21.jpg" alt="프로필 이미지">
+        </div>
+
+        <!-- 우측: 정보 및 소개 -->
+        <div class="info-section">
+            <h2>안녕하세요, 최유진입니다!</h2>
+            <p>저는 대학생이며, 현재 소프트웨어 학과를 복수전공 중이며, 개발을 공부하고 있습니다. 이 페이지는 Bootstrap으로 만들어졌습니다. 챗 GPT의 도움을 받았습니다.</p>
+            
+            <div class="skills">
+                <h4><i class="fas fa-laptop-code"></i> 스킬</h4>
+                <ul class="list-group">
+                    <li><i class="fas fa-code"></i> C언어</li>
+                    <li><i class="fab fa-java"></i> Java</li>
+                    <li><i class="fab fa-html5"></i> HTML, CSS</li>
+                    <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                </ul>
+            </div>
+
+            <div class="contact">
+                <h4><i class="fas fa-envelope"></i> 연락처</h4>
+                <p>Email: <a href="mailto:jinye24@naver.com">jinye24@naver.com</a></p>
+                <p>Phone: 010-4660-2898</p>
+                <a href="mailto:jinye24@naver.com" class="btn-custom"><i class="fas fa-paper-plane"></i> 이메일 보내기</a>
+            </div>
+
+            <div class="social-links">
+                <h4><i class="fas fa-link"></i> 소셜 링크</h4>
+                <a href="https://github.com/slw13d-ly/webpgm" target="_blank" class="btn btn-dark me-2"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
