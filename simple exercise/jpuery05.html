@@ -1,0 +1,26 @@
+5. 폼 값 가져오기
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 예제 5</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#submitBtn").click(function() {
+                var name = $("#name").val();
+                alert("입력한 이름: " + name);
+            });
+        });
+    </script>
+</head>
+<body>
+    <label for="name">이름:</label>
+    <input type="text" id="name">
+    <button id="submitBtn">제출</button>
+</body>
+</html>
+
+설명: 텍스트 필드에 입력된 값을 가져와 알림창으로 표시합니다.

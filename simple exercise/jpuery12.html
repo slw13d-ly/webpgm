@@ -1,0 +1,22 @@
+12. 클릭 이벤트 처리
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 예제 2</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#btn").click(function(){
+        alert("버튼이 클릭되었습니다!");
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="btn">클릭하세요</button>
+</body>
+</html>
+
+설명 : 버튼을 클릭하면 알림창이 뜹니다.
