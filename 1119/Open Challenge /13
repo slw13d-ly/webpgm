@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<title>오디오 리스트 연속 재생</title>
+</head>
+<body>
+	<h3>오디오 리스트 연속 재생</h3>
+	<hr>
+	처음 play 버튼을 누르면 리스트에 있는 곡이 연속하여 자동 재생 됩니다. 마우스로 다른 곡을 선택하면 곡이 바뀝니다. next 버튼을 누르면 다음 곡으로 넘어갑니다.
+	<hr>
+	<audio id = "audio" src = "" controls></audio>
+	<br>
+	<select id = "select" size = "3" onchange = "play()">
+		<option value = "https://docs.google.com/uc?export=open&id=1dB1yUPgda3p4y3HUgnHJp_C8wVVTJ7yc" type='audio/mp3' />Luxery song</option>
+		<option value = "https://docs.google.com/uc?export=open&id=1TsmlYOManrPZlhyAFrJfsxTjL2XBCKd3" type='audio/mp3' />Calm song</option>
+		<option value = "https://docs.google.com/uc?export=open&id=1eIwEJkR-G1YOZ6rBa4RdNKj-6g_A8gAY" type='audio/mp3' />Happy song</option>
+	</select>
+
+	<button id = "play" onclick = "play()">play</button>
+	<button id = "next" onclick = "next()">next</button><br><br>
+
+	<div id = "msg"> 현재 연주되는 곡명이 보입니다.</div>
+
+	<script>
+		var audio = document.getElementById("audio");  // id = "audio"인 DOM객체 알아내기
+		var play_sel = document.getElementById("select");
+		var div = document.getElementById("msg");
+		
+		var len = play_sel.length; // 오디오 옵션 개수
+		var idx = 0;  //select의 인덱스
+		var playmusic = false;  //음악을 단 한번도 플레이 안한 경우
+
+		function play(){
+			if(play_sel.selectedIndex < 0){
+				audio.src = play_sel.options[idx].value;
+				playmusic = true;
+			}
+			else{
+				audio.src = play_sel.options[play_sel.selectedIndex].value;
+				idx = play_sel.selectedIndex;
+				playmusic = true;
+				div.innerHTML = audio.src + "페이지에 있는 음악을 재생합니다.";
+			}
+			audio.play();
+		}
+
+		function next(){
+			if(play_sel.selectedIndex < 0){
+				if(idx + 1 < len)
+					idx++;
+				else
+					idx = 0;
+
+				if(playmusic == false){
+					idx = 0;
+				}
+				playmusic = true;
+			}
+			else{
+				idx++;
+
+				if(idx>=len){
+					idx = 0;
+				}
+				playmusic = true;
+				play_sel.selectedIndex = idx;
+			}
+
+			audio.src = play_sel.options[idx].value;
+			audio.play();
+		}
+	</script>
+</body>
+</html>
