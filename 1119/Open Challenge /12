@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<title>단어장 만들기</title>
+</head>
+<body>
+	<h3>나의 단어장 만들기</h3>
+	<hr>
+	영어 <input id = "english" type = "text" size = "20"><br>
+	한글 <input id = "hangul" type = "text" size = "20"><br><br>
+	<button id = "save" onclick = "save()">단어 저장</button>
+	<button id = "search" onclick = "search()">영단어 검색</button>
+	<button id = "remove" onclick = "remove()">단어 삭제</button>
+	<button id = "view" onclick = "view()">전체 보기</button>
+
+	<script>
+		var english = document.getElementById("english");
+		var hangul = document.getElementById("hangul");
+
+		function save(){
+			if(!window.localStorage){
+				alert("스토리지를 지원하지 않습니다.");
+				return;
+			}
+			
+			if(localStorage.getItem(english.value) != null){
+				if(confirm(english.value + "가 이미 있습니다. 수정하시겠습니까?")){
+					localStorage.setItem(english.value, hangul.value);
+				}
+			}
+			else{
+				localStorage.setItem(english.value, hangul.value);
+			}
+
+			english.value = "";
+			hangul.value = "";
+		}
+
+		function search(){
+			if(!window.localStorage){
+				alert("스토리지를 지원하지 않습니다.");
+				return;
+			}
+			var val = localStorage.getItem(english.value);
+			if(val == null)
+				alert(english.value + "는 없는 단어입니다.");
+			else
+				hangul.value = val;
+		}
+
+		function remove(){
+			if(!window.localStorage){
+				alert("스토리지를 지원하지 않습니다.");
+				return;
+			}
+
+			if(localStorage.getItem(english.value) == null){
+				alert(english.value + "는 없는 단어입니다.");
+				english.value = "";
+				return false;
+			}
+			else{
+				localStorage.removeItem(english.value, hangul.value);
+				english.value = "";
+				hangul.valie = "";
+			}
+		}
+
+	
+		function view(){
+			var newWindow = window.open("", "newWin", "width = 500, height = 500");
+			newWindow.document.write("<h3>나의 단어장 모두 출력</h3><hr>");
+
+			newWindow.document.write("<table style= 'background:aliceblue' 'border-spacing: 0'>");
+
+			for(var i=0; i<localStorage.length; i++){
+				var key = localStorage.key(i);
+				var val = localStorage.getItem(key);
+				newWindow.document.write("<tr>");
+				newWindow.document.write("<td style= 'border: solid yellowgreen 1px'>" + (i+1) + "</td>");
+				newWindow.document.write("<td>" + key.bold() + "</td>");
+				newWindow.document.write("<td>" + val + "</td>");
+			}
+			newWindow.document.write("</tr>");
+			newWindow.document.write("</table>");
+		}
+	</script>
+</body>
+</html>
+출처: https://itguswjd.tistory.com/16 [대학생의 개발일지:티스토리]
