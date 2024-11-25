@@ -11,9 +11,9 @@
 	<audio id = "audio" src = "" controls></audio>
 	<br>
 	<select id = "select" size = "3" onchange = "play()">
-		<option value = "https://docs.google.com/uc?export=open&id=1dB1yUPgda3p4y3HUgnHJp_C8wVVTJ7yc" type='audio/mp3' />Luxery song</option>
-		<option value = "https://docs.google.com/uc?export=open&id=1TsmlYOManrPZlhyAFrJfsxTjL2XBCKd3" type='audio/mp3' />Calm song</option>
-		<option value = "https://docs.google.com/uc?export=open&id=1eIwEJkR-G1YOZ6rBa4RdNKj-6g_A8gAY" type='audio/mp3' />Happy song</option>
+		<option value = "Open Challenge" type='audio/mp3' />Luxery song</option>
+		<option value = "Open Challenge" type='audio/mp3' />Calm song</option>
+		<option value = "Open Challenge" type='audio/mp3' />Happy song</option>
 	</select>
 
 	<button id = "play" onclick = "play()">play</button>
