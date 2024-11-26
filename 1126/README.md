@@ -1,4 +1,4 @@
 ## 1126
 ### Report
 #### *▶ report.html* 
-> ![image](https://github.com/user-attachments/assets/db5f17de-10f8-4d53-b147-1402d2aca2a6)
+> <img width="960" alt="캡처" src="https://github.com/user-attachments/assets/874d8bb9-690b-4f4d-b5aa-cf19ebeb63cd">
