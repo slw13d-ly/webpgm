@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국수력원자력</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gmarket Sans TTF Medium', Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+        }
+
+        /* 헤더 및 푸터 스타일 */
+        .header, .footer {
+            background-color: #ffffff;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1, .footer p {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #003c69;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* 네비게이션 스타일 */
+        .navbar {
+            background-color: transparent;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #003c69;
+        }
+
+        .navbar .nav-link {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .navbar .nav-link.active {
+            font-weight: bold;
+            color: #003c69;
+            border-bottom: 2px solid #ffba00;
+        }
+
+        /* 탭별로 활성화된 상태의 아이콘 색상 변경 */
+        #about.tab-pane.active .section-heading i {
+            color: #003c69; /* 회사 소개 탭 */
+        }
+
+        #services.tab-pane.active .section-heading i {
+            color: #ffba00; /* 제공 서비스 탭 */
+        }
+
+        #vision.tab-pane.active .section-heading i {
+            color: #4caf50; /* 비전 및 목표 탭 */
+        }
+
+        #team.tab-pane.active .section-heading i {
+            color: #f44336; /* 팀 소개 탭 */
+        }
+
+        #contact.tab-pane.active .section-heading i {
+            color: #2196f3; /* 연락처 탭 */
+        }
+
+        .about-box {
+            border: 2px solid #003c69;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #e3f2fd;
+        }
+
+        .services-box {
+            border: 2px solid #ffba00;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #fff9c4;
+        }
+
+        .vision-box {
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #c8e6c9;
+        }
+
+        .team-box {
+            border: 2px solid #f44336;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #ffebee;
+        }
+
+        /* 기본 폰트 및 색상 설정 */
+        .tab-content {
+            margin-top: 20px;
+        }
+
+        .tab-pane {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-heading {
+            font-size: 1.8rem;
+            color: #003c69;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-heading i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            color: #ffba00;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .info-box {
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .responsive-img {
+        width: 100%; /* 이미지가 부모 요소의 너비를 가득 채움 */
+        max-width: 600px; /* 최대 너비를 제한 (예: 500px) */
+        height: auto; /* 높이를 너비에 맞춰 비율 유지 */
+        border-radius: 10px; /* 모서리를 둥글게 만들기 (선택 사항) */
+        }
+
+        .section-subheading {
+        font-size: 1.3rem;
+        color: #003c69;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        }
+
+        .section-subheading i {
+        font-size: 1.3rem;
+        margin-right: 8px;
+        color: #003c69;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>한국수력원자력-고리원자력</h1>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">KHNP</a>
+        </div>
+    </nav>
+
+    <!-- Tab Content -->
+    <div class="container my-5">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">
+                    <i class="fas fa-building"></i> 본부 소개
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false">
+                    <i class="fas fa-cogs"></i> 시설현황
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab" aria-controls="vision" aria-selected="false">
+                    <i class="fas fa-bullseye"></i> 인재상
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="team-tab" data-bs-toggle="tab" data-bs-target="#team" type="button" role="tab" aria-controls="team" aria-selected="false">
+                    <i class="fas fa-briefcase"></i> 부서 안내
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                    <i class="fas fa-phone-alt"></i> 연락처
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-4" id="myTabContent">
+            <!-- About Section -->
+            <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+                <h2 class="section-heading"><i class="fas fa-building"></i> 본부 소개</h2>
+                <img src="고리원자력본부장 소개말.png" alt="고리원자력본부장 소개말" class="responsive-img">
+                <div class="grid-container">
+                    <div class="grid-item">▲ 고리원자력본부장 인사말</div>
+                </div>  
+                <p class="section-content">"고리원자력본부는 1978년 4월 고리1호기 상업운전을 시작으로 최초로 원자력의 횃불을 밝힌 국내 원자력 발상지입니다. 
+                    원자력 전 분야를 수행하는 국내 최대 규모의 발전 단지인 고리본부는 명실상부한 선임 본부로서의 긍지와 자부심을 지켜나가고 있습니다. 
+                    고리본부는 국가경제와 국민 생활에 있어 무엇보다 소중한 전기를 생산하는 에너지 공기업으로서 안정적인 전력공급을 위해 가장 우선적인 노력을 기울일 것이며, 
+                    지역사회와 더불어 국민 여러분께서 더욱 신뢰하고 안심할 수 있도록 안전을 최우선의 가치로 삼아 최고 수준의 안전관리를 해 내겠습니다."</p>
+                <div class="about-box">
+                    <p>&#10004; "고리원자력본부 본부장 이광훈의 인사말 요약"</p>
+                </div>
+            </div>
+            
+            <!-- Services Section -->
+            <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+                <h2 class="section-heading"><i class="fas fa-cogs"></i> 시설현황</h2>
+                <h3 class="section-subheading"><i class="fas fa-industry"></i> 고리 1, 2호기 </h3>
+                    <li>고리 1호기-영구정지</li>
+                    <li>고리 2호기</li>
+                <h3 class="section-subheading"><i class="fas fa-industry"></i> 고리 3, 4호기 </h3>
+                    <li>고리 3호기</li>
+                    <li>고리 4호기</li>
+                <h3 class="section-subheading"><i class="fas fa-tools"></i> 신고리 1, 2호기 </h3>
+                    <li>신고리 1호기</li>
+                    <li>신고리 2호기</li>
+                <h3 class="section-subheading"><i class="fas fa-fan"></i> 고리 풍력 </h3>
+                <h3 class="section-subheading"><i class="fas fa-solid fa-solar-panel"></i> 고리 태양광 </h3>
+                    <li>1호기</li>
+                    <li>2호기</li>
+            <div class="services-box">
+                <p>&#8594; 우리의 기술은 국가 에너지 믹스를 지속 가능하고 효율적으로 변화시키고 있습니다.</p>
+            </div>
+        </div>
+
+
+            <!-- Vision Section -->
+            <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+                <h2 class="section-heading"><i class="fas fa-bullseye"></i> 인재상</h2>
+                <h3 class="section-subheading"><i class="fas fa-user"></i> 1.기본에 충실한 인재 </h3>
+                    <li>윤리의식</li>
+                    <li>주인의식</li>
+                    <li>안전의식</li>
+                <div class="grid-container">
+                    <div class="grid-item">→ 건전한 가치관과
+                        윤리의식을 바탕으로,본인의 역할과 책임을 다하며,
+                        안전문화 정착에 기여하는 인재</div>
+                </div>  
+                <h3 class="section-subheading"><i class="fas fa-user-friends"></i> 2.배려하는 상생 인재 </h3>
+                    <li>소통</li>
+                    <li>협력</li>
+                    <li>사회적 가치</li>
+                <div class="grid-container">
+                    <div class="grid-item">→ 사회에 대한 배려와 존중을 기반으로 이해관계자들과 함께
+                        미래를 만들어가는 가능성과 사회적 가치를 더 중시하는 인재</div>
+                </div>  
+                <h3 class="section-subheading"><i class="fas fa-users"></i> 3.글로벌 전문 인재 </h3>
+                    <li>열정</li>
+                    <li>전문 역량</li>
+                    <li>글로벌 최고</li>
+                <div class="grid-container">
+                    <div class="grid-item">→자기 직무에 있어서
+                        세계 최고가 되겠다는 열정으로 꾸준히 실력을 배양하는 전문성을 갖춘 인재</div>
+                </div>  
+                <div class="vision-box">
+                    <p>&#127758; 당신이 꿈꾸는 희망과 미래, 한국수력원자력에서 이루어나가세요. 열정적이고 패기있는 당신을 언제나 기다립니다.</p>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
+                <h2 class="section-heading"><i class="fas fa-briefcase"></i> 부서 안내</h2>
+                    <li>경영·회계·사무</li>
+                    <li>원자력 (전기·전자)</li>
+                    <li>화학</li>
+                    <li>토목·건축</li>
+                    <li>통신·전산</li>
+                <div class="team-box">
+                    <p>&#128161; 원자력에 기술에 관한 부서만 제공합니다.</p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <h2 class="section-heading"><i class="fas fa-phone-alt"></i> 연락처</h2>
+                <p class="section-content">대표 안내: 051-726-2114</p>
+                <p><i class="fas fa-location-arrow"></i> 주소: 부산 기장군 장안읍 길천길 96-1</p>
+                <p><i class="fas fa-clock"></i> 안내 시간: 평일, 9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 한국수력원자력</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
