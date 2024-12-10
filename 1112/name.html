@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름 그리기</title>
+    <style>
+        body { display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        canvas { border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+
+    <script>
+        // 화면 중앙에 브라우저 창을 위치시키는 함수
+        function centerWindow(width, height) {
+            // 현재 화면의 너비와 높이 가져오기
+            const screenWidth = window.screen.width;
+            const screenHeight = window.screen.height;
+
+            // 화면 중앙 좌표 계산
+            const left = (screenWidth - width) / 2;
+            const top = (screenHeight - height) / 2;
+
+            // 창 크기 설정 및 중앙으로 이동
+            window.resizeTo(width, height);
+            window.moveTo(left, top);
+        }
+
+        // 화면 중앙에 브라우저 창 위치시키기
+        centerWindow(800, 600);
+
+        // Canvas에 도형 그리기
+        function drawOnCanvas() {
+            const canvas = document.getElementById('myCanvas');
+            const context = canvas.getContext('2d');
+
+            if (context) {
+                
+                
+                context.beginPath();
+                context.moveTo(180, 250);
+                context.lineTo(180, 280);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                // ㅊ ㅈ 선 그리기
+                context.beginPath();
+                context.moveTo(120, 280);
+                context.lineTo(230, 280);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                context.beginPath();
+                context.moveTo(120, 350);
+                context.lineTo(230, 280);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                context.beginPath();
+                context.moveTo(180, 310);
+                context.lineTo(230, 350);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                // ㅚ ㅣ 선 그리기
+                context.beginPath();
+                context.moveTo(180, 360);
+                context.lineTo(180, 420);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                // ㅚ ㅡ 선 그리기
+                context.beginPath();
+                context.moveTo(120, 420);
+                context.lineTo(270, 420);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                // ㅚ ㅣ 선 그리기
+                context.beginPath();
+                context.moveTo(270, 270);
+                context.lineTo(270, 420);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+                
+                // 유
+                // - 선 그리기
+                context.beginPath();
+                context.moveTo(320, 370);
+                context.lineTo(480, 370);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+                // ㅣ
+                context.beginPath();
+                context.moveTo(375, 368);
+                context.lineTo(375, 440);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+                // ㅣ
+                context.beginPath();
+                context.moveTo(425, 368);
+                context.lineTo(425, 440);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+            // ㅇ 아크(원) 그리기
+            context.beginPath();
+                context.arc(400, 300, 50, 0, Math.PI * 2);
+                context.fillStyle = '#FFFFFF';
+                context.fill();
+
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+                
+                // ㅊ ㅈ 선 그리기
+                context.beginPath();
+                context.moveTo(520, 280);
+                context.lineTo(630, 280);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                context.beginPath();
+                context.moveTo(520, 350);
+                context.lineTo(630, 280);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                context.beginPath();
+                context.moveTo(580, 310);
+                context.lineTo(630, 350);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                // ㅚ ㅣ 선 그리기
+                context.beginPath();
+                context.moveTo(550, 360);
+                context.lineTo(550, 420);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                // ㅚ ㅡ 선 그리기
+                context.beginPath();
+                context.moveTo(550, 420);
+                context.lineTo(650, 420);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+
+                // ㅚ ㅣ 선 그리기
+                context.beginPath();
+                context.moveTo(670, 270);
+                context.lineTo(670, 400);
+                context.strokeStyle = '#1E90FF';
+                context.lineWidth = 8;
+                context.stroke();
+            }
+        }
+
+        // 페이지가 로드된 후 캔버스에 그림 그리기
+        window.onload = drawOnCanvas;
+    </script>
+</body>
+</html>
